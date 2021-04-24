@@ -10,7 +10,7 @@ def countdown(i):
 
 
 def sum_reCurs(list):
-    # sum of listay elements recursive
+    # sum of list elements recursive
     if len(list) == 1:
         return list[0]
     else:
@@ -32,5 +32,18 @@ def list_max_reCurs(list):
         return list_max_reCurs(list)
 
 
-print(list_max_reCurs([5, 2, 4]))
+# print(list_max_reCurs([5, 2, 4]))
+
+def sort_quick(list):
+    if len(list) < 2:
+        return list
+    else:
+        pivot_ = list[0]
+        # массив элементов меньше опорного
+        less__ = [i for i in list[1:] if i <= pivot_]
+        # массив элементов больше опорного
+        greate = [i for i in list[1:] if i > pivot_]
+        return sort_quick(less__) + [pivot_] + sort_quick(greate)
+
+# print(sort_quick([5,3,6,2]))        
 # ===
