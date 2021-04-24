@@ -19,19 +19,18 @@ def sum_reCurs(list):
 # list = [1, 2, 1]
 # print(sum_reCurs(list))
 
+
 def list_max_reCurs(list):
     # max in list recursion
-    max = list[0]
-    if len(list) = 1:
-        if max < list[0]:
-            return list[0]
-        else:
-            return max
+    if len(list) < 2:
+        return list[0]
     else:
-        list.pop(0)
-        tmp = list_max_reCurs(list)
-        if max < tmp:
-            return tmp
+        if list[0] > list[1]:
+            list.pop(1)
         else:
-            return max
+            list.pop(0)
+        return list_max_reCurs(list)
+
+
+print(list_max_reCurs([5, 2, 4]))
 # ===
